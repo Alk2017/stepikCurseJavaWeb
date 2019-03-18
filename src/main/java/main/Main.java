@@ -1,3 +1,5 @@
+package main;
+
 import org.eclipse.jetty.server.Server;
 
 public class Main {
