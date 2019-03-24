@@ -17,6 +17,7 @@ public class AllRequestsServlet extends HttpServlet {
 
         Map<String, Object> pageVariables = createPageVariablesMap(request);
         pageVariables.put("message", "");
+        pageVariables.put("status", response.getStatus());
 
         response.getWriter().println(PageGenerator.getInstance().getPage("page.html", pageVariables));
 
@@ -39,6 +40,7 @@ public class AllRequestsServlet extends HttpServlet {
             response.setStatus(HttpServletResponse.SC_OK);
         }
         pageVariables.put("message", message == null ? "" : message);
+        pageVariables.put("status", response.getStatus());
 
         response.getWriter().println(PageGenerator.getInstance().getPage("page.html", pageVariables));
     }
